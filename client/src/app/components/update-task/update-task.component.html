@@ -1,0 +1,13 @@
+<h2>Update Task Status</h2>
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let status of statuses" [value]="status.value">
+        {{ status.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit">Update Status</button>
+</form>
